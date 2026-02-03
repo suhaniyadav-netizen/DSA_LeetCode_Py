@@ -123,8 +123,6 @@
 # maxi = -math.inf means minus infinity 
 
 import math
-
-
 arr = [3,4,5,6,7,12,0,15,8]
 n = arr[0]
 for i in range(1, len(arr)):
@@ -164,19 +162,6 @@ print(maxi, mini)
 # time complexity is O(n) and space complexity is O(1)
 
 # LEETCODE PROBLEM NUMBER 412 : FIZZ BUZZ
-
-def fizzBuzz(n):
-    result = []
-    for i in range(1, n + 1):
-        if i % 3 == 0 and i % 5 == 0:
-            result.append("FizzBuzz")
-        elif i % 3 == 0:
-            result.append("Fizz")
-        elif i % 5 == 0:
-            result.append("Buzz")
-        else:
-            result.append(str(i))
-    return result
 
 class Solution(object):
     def fizzBuzz(self, n):
@@ -227,6 +212,26 @@ class Solution(object):
             return True
         return False
 # time complexity is O(n) and space complexity is O(n)
+
+#LEETCODE PROBLEM NO 881 : BOATS TO SAVE PEOPLE
+
+class Solution(object):
+    def numRescueBoats(self, people, limit):
+        """
+        :type people: List[int]
+        :type limit: int
+        :rtype: int
+        """
+        people.sort()
+        i = 0
+        j = len(people) - 1
+        boats = 0
+        while i <= j:
+            if people[i] + people[j] <= limit:
+                i += 1
+            j -= 1
+            boats += 1
+        return boats
         
 
 
