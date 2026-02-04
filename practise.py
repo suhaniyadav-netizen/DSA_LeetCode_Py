@@ -94,29 +94,29 @@
 
 # # new method O(n) time complexity and O(1) space complexity without sorting method :
 
-# arr = [0,2,0,4,3,0,7,8,0]
-# i = 0
-# j = 1
-# while i<j and j<len(arr):
-#     if arr[i] == 0 and arr[j] == 0:
-#         j+=1
-#     elif arr[i] == 0 and arr[j] != 0:
-#         arr[i], arr[j] = arr[j], arr[i]
-#         i+=1
-#         j+=1
-#     else:
-#         i+=1
-#         j+=1
-# print(arr) 
+arr = [0,2,0,4,3,0,7,8,0]
+i = 0
+j = 1
+while i<j and j<len(arr):
+    if arr[i] == 0 and arr[j] == 0:
+        j+=1
+    elif arr[i] == 0 and arr[j] != 0:
+        arr[i], arr[j] = arr[j], arr[i]
+        i+=1
+        j+=1
+    else:
+        i+=1
+        j+=1
+print(arr) 
 
 
 # Print elements in the given list :            
 
-# l = [ [2,5,6], [3,1,7], [5,2,1] ]              # it's a 2D list we need nested loops therefore O(n^2) time complexity
-# for i in range(len(l)):
-#     for j in range(len(l[i])):
-#         print(l[i][j] , end=" ")
-#     print()
+l = [ [2,5,6], [3,1,7], [5,2,1] ]              # it's a 2D list we need nested loops therefore O(n^2) time complexity
+for i in range(len(l)):
+    for j in range(len(l[i])):
+        print(l[i][j] , end=" ")
+    print()
 
 
 # make a list add elements and find the max element from the list without using builtin functions
@@ -131,6 +131,8 @@ for i in range(1, len(arr)):
 print(n)
 
 # time complexity is O(n) and space complexity is O(1)
+
+
 
 #to find the second highest value from the list without using builtin functions
 
@@ -161,6 +163,8 @@ print(maxi, mini)
 
 # time complexity is O(n) and space complexity is O(1)
 
+
+
 # LEETCODE PROBLEM NUMBER 412 : FIZZ BUZZ
 
 class Solution(object):
@@ -182,6 +186,8 @@ class Solution(object):
         return res
 # time complexity is O(n) and space complexity is O(n)
 
+
+
 #LEETCODE PROBLEM NUMBER 66 : PLUS ONE
 
 class Solution(object):
@@ -199,6 +205,8 @@ class Solution(object):
         return [1]+digits 
 
 # time complexity is O(n) and space complexity is O(1)
+
+
 # 
 # # LEETCODE PROBLEM NUMBER 217 : CONTAINS DUPLICATE
 # 
@@ -212,6 +220,8 @@ class Solution(object):
             return True
         return False
 # time complexity is O(n) and space complexity is O(n)
+
+
 
 #LEETCODE PROBLEM NO 881 : BOATS TO SAVE PEOPLE
 
@@ -232,6 +242,10 @@ class Solution(object):
             j -= 1
             boats += 1
         return boats
+    
+# time complexity is O(n log n) due to sorting and space complexity is O(1)
+
+
         
 #LEETCODE PROBLEM NO 349 : INTERSECTION OF TWO ARRAYS
 
@@ -262,3 +276,25 @@ class Solution(object):
         return(list(set(nums1) & set(nums2)))
     
 # time complexity is O(n) and space complexity is O(n)
+
+
+# LEETCODE PROBLEM NUMBER 242 : VALID ANAGRAM
+class Solution(object):
+    def isAnagram(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        if len(s) != len(t):
+            return False
+        count = {}
+        for char in s:
+            count[char] = count.get(char, 0) + 1
+        for char in t:
+            if char not in count:
+                return False
+            count[char] -= 1
+            if count[char] < 0:
+                return False
+        return True
