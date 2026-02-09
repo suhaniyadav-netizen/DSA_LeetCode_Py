@@ -38,3 +38,17 @@ class Solution(object):
                 return False
         return True
            
+
+ # another solution using sorting
+class Solution(object):
+    def isAnagram(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        return sorted(s) == sorted(t)
+    
+ # 
+ # # time complexity is O(n log n) due to sorting and space complexity is O(1)
+ #    
