@@ -14,6 +14,6 @@ class Solution(object):
         for i in range(len(mat)):
             sum += mat[i][i]
             if i != len(mat) - 1 - i:
-                sum += mat[i][len(mat) - 1 - i]
+                sum += mat[i][len(mat) - 1 - i] 
         return sum
     
