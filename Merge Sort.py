@@ -5,32 +5,20 @@
 
 # It follows divide and conquer.
 
-# Example : [8, 3, 5, 4, 7, 6, 1, 2]
+# Example : [8, 3, 5, 4]
 
 # Step 1: Divide
-# [8, 3, 5, 4] and [7, 6, 1, 2]
-
+# [8, 3] n [5, 4]
 # Step 2: Divide again
-# [8, 3] [5, 4] [7, 6] [1, 2]
-
-# Step 3: Divide again
-# [8] [3] [5] [4] [7] [6] [1] [2]
-
-# Now all are single elements, so all are sorted.
-# Step 4: Merge
+# [8] [3] [5] [4] 
+# Step 3: Merge
 # [8] + [3] -> [3, 8]
 # [5] + [4] -> [4, 5]
-# [7] + [6] -> [6, 7]
-# [1] + [2] -> [1, 2]
-
-# Step 5: Merge bigger parts
+# Step 4: Merge bigger parts
 # [3, 8] + [4, 5] -> [3, 4, 5, 8]
-# [6, 7] + [1, 2] -> [1, 2, 6, 7]
 
-# Step 6: Final merge
-# [3, 4, 5, 8] + [1, 2, 6, 7] -> [1, 2, 3, 4, 5, 6, 7, 8]
 
-           
+        
 def merge_sort(arr):                            # Sort Code Only
     if len(arr) <= 1:                           # Base case: if array has 0/1 element, it's sorted
         return arr
