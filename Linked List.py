@@ -27,12 +27,21 @@ class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
-        
 
-# INSERT AT BEGINNING :
+
+# INSERT AT BEGINNING :                    # time complexity is O(1) and space complexity is O(1) 
 def insert_begin(head, data):
     new_node = Node(data)
     new_node.next = head
     return new_node       
 
-# time complexity is O(1) and space complexity is O(1) 
+# INSERT AT END :                          # time complexity is O(n) and space complexity is O(1)
+def insert_end(head, data):
+    new_node = Node(data)
+    if not head:
+        return new_node
+    temp = head
+    while temp.next:
+        temp = temp.next
+    temp.next = new_node
+    return head
