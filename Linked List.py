@@ -35,6 +35,7 @@ def insert_begin(head, data):
     new_node.next = head
     return new_node       
 
+
 # INSERT AT END :                          # time complexity is O(n) and space complexity is O(1)
 def insert_end(head, data):
     new_node = Node(data)
@@ -44,4 +45,18 @@ def insert_end(head, data):
     while temp.next:
         temp = temp.next
     temp.next = new_node
+    return head
+
+
+# DELETE A NODE :                          # time complexity is O(n) and space complexity is O(1)
+def delete_node(head, key):
+    temp = head
+    if temp and temp.data == key:
+        return temp.next
+    prev = None
+    while temp and temp.data != key:
+        prev = temp
+        temp = temp.next
+    if temp:
+        prev.next = temp.next
     return head
