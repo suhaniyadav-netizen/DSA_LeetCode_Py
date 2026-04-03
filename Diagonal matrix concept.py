@@ -1,6 +1,5 @@
 
 # General solution / approach 
-
 m = int(input("enter the rows"))
 n = int(input("enter the columns"))   
 matrix = []

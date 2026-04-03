@@ -20,9 +20,8 @@ class Solution(object):
         return True
     
 # time complexity is O(n) and space complexity is O(n)
-# 
-# 
-# 
+
+
 # another solution ( accepted by leetcode in less ms speed ) 
 class Solution(object):
     def isAnagram(self, s, t):
@@ -49,6 +48,5 @@ class Solution(object):
         """
         return sorted(s) == sorted(t)
     
- # 
+ 
  # # time complexity is O(n log n) due to sorting and space complexity is O(1)
- #    

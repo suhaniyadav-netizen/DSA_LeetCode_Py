@@ -8,16 +8,22 @@
 from xml.dom import Node
 
 
-class sll:
-    def __init__(self, start=None):
-        self.start = start
-    def is_empty(self):
-        return self.start == None
-    def insert_at_beginning(self, data):
-        if not self.is_empty():
-            n=Node (self.start.data, self.start.next)
-            self.start.next = n
-        else:
-            n=Node(data)    
-            self.start = n
+# class sll:
+#     def __init__(self, start=None):
+#         self.start = start
+#     def is_empty(self):
+#         return self.start == None
+#     def insert_at_beginning(self, data):
+#         if not self.is_empty():
+#             n=Node (self.start.data, self.start.next)
+#             self.start.next = n
+#         else:
+#             n=Node(data)    
+#             self.start = n
 
+
+# BASIC STRUCTURE OF LL :
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
