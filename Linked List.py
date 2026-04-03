@@ -27,3 +27,12 @@ class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
+        
+
+# INSERT AT BEGINNING :
+def insert_begin(head, data):
+    new_node = Node(data)
+    new_node.next = head
+    return new_node       
+
+# time complexity is O(1) and space complexity is O(1) 
