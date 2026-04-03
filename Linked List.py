@@ -60,3 +60,10 @@ def delete_node(head, key):
     if temp:
         prev.next = temp.next
     return head
+
+# TRAVERSE A LINKED LIST :                    # time complexity is O(n) and space complexity is O(1)
+def display(head):
+    temp = head
+    while temp:
+        print(temp.data, end=" -> ")
+        temp = temp.next
