@@ -42,3 +42,31 @@ class Solution(object):
         return tot_count
 
 # Time Complexity: O(n^2)
+
+
+# Approach 2: Last Number stored
+class Solution(object):
+    def countHillValley(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        tot_count = 0
+        n = len(nums)
+        prev_num = nums[0]
+        
+        for i in range(1, n - 1):
+            if nums[i] == nums[i + 1]:
+                continue
+
+            is_hill = nums[i] > prev_num and nums[i] > nums[i + 1]
+            is_vall = nums[i] < prev_num and nums[i] < nums[i + 1]
+            
+            if is_hill or is_vall:
+                tot_count += 1
+                
+            prev_num = nums[i]
+            
+        return tot_count
+
+# Time Complexity: O(n)
