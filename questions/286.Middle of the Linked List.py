@@ -1,7 +1,7 @@
-# LEETCODE PROBLEM NO 286 : MIDDLE OF THE LINKED LIST
-
+# Leetcode Problem 876: Middle of the Linked List
 # Given the head of a singly linked list, return the middle node of the linked list.
 # If there are two middle nodes, return the second middle node.
+# Definition for singly-linked list.
 
 # Example 1:
 # Input: head = [1,2,3,4,5]
@@ -13,6 +13,15 @@
 # Output: [4,5,6]
 # Explanation: Since the list has two middle nodes with values 3 and 4, we return the second one.
 
+# Constraints:
+# The number of nodes in the list is in the range [1, 100].
+
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+
 class Solution(object):
     def middleNode(self, head):
         """
@@ -22,17 +31,15 @@ class Solution(object):
         c = 0
         temp = head
         while temp:
-            c += 1
+            c+=1
             temp = temp.next
 
-        mid = c//2
+        mid = c // 2
 
         temp = head
         for i in range(mid):
             temp = temp.next
-
         return temp
-    
 
 
     
