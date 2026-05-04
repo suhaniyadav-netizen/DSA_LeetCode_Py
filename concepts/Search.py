@@ -42,3 +42,6 @@ def search_insert_position(arr, target):
         else:
             right = mid - 1      
     return left
+
+#time complexity: O(log n)
+#space complexity: O(1)
