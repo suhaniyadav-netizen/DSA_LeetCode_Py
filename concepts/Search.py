@@ -24,3 +24,6 @@ def binary_search(arr, target):
         else:
             right = mid - 1      
     return -1
+
+#time complexity: O(log n)
+#space complexity: O(1)
